@@ -1,5 +1,5 @@
 pyrogram==1.4.16
 TgCrypto
-python-arq
+git+https://github.com/PuneetStar/pythonarq
 pykeyboard
 python-dotenv
