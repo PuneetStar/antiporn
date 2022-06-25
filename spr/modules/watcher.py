@@ -56,7 +56,7 @@ async def message_watcher(_, message: Message):
             return
         file = await spr.download_media(file_id)
         try:
-            resp = await arq.nsfw_scan(file=file)
+            resp = await arq.nsfw(file=file)
         except Exception:
             try:
                 return os.remove(file)
@@ -73,7 +73,7 @@ async def message_watcher(_, message: Message):
     text = message.text or message.caption
     if not text:
         return
-    resp = await arq.nlp(text)
+    resp = await arq.spam(text)
     if not resp.ok:
         return
     result = resp.result[0]
