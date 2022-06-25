@@ -113,7 +113,7 @@ async def nsfw_scan_command(_, message: Message):
         return await m.edit("Something went wrong.")
     file = await spr.download_media(file_id)
     try:
-        results = await arq.nsfw(file=file)
+        results = await arq.nsfw_scan(file=file)
     except Exception as e:
         return await m.edit(str(e))
     remove(file)
@@ -140,7 +140,7 @@ async def scanNLP(_, message: Message):
     text = r.text or r.caption
     if not text:
         return await message.reply("Can't scan that")
-    data = await arq.spam(text)
+    data = await arq.nlp(text)
     data = data.result[0]
     msg = f"""
 **Is Spam:** {data.is_spam}
