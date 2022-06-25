@@ -9,7 +9,7 @@ SESSION_NAME = "spr"
 DB_NAME = "db.sqlite3"
 API_ID = 6
 API_HASH = "eb06d4abfb49dc3eeb1aeb98ae0f581e"
-ARQ_API_URL = "https://arq.hamker.in"
+ARQ_API_URL = "https://api.safone.tech"
 
 if exists("config.py"):
     from config import *
@@ -18,7 +18,7 @@ else:
 
 session = ClientSession()
 
-arq = ARQ(ARQ_API_URL, ARQ_API_KEY, session)
+arq = ARQ(ARQ_API_URL, session)
 
 conn = connect(DB_NAME)
 
