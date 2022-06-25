@@ -143,10 +143,8 @@ async def scanNLP(_, message: Message):
     data = await arq.nlp(text)
     data = data.result[0]
     msg = f"""
-**Is Spam:** {data.is_spam}
-**Spam Probability:** {data.spam_probability} %
-**Spam:** {data.spam}
 **Ham:** {data.ham}
-**Profanity:** {data.profanity}
+**Is_Spam:** {data.is_spam} %
+**Spam:** {data.spam}
 """
     await message.reply(msg, quote=True)
