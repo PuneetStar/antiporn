@@ -141,7 +141,7 @@ async def scanNLP(_, message: Message):
     if not text:
         return await message.reply("Can't scan that")
     data = await arq.nlp(text)
-    data = data.results[0]
+    data = data.data[0]
     msg = f"""
 **Ham:** {data.ham}
 **Is_Spam:** {data.is_spam} %
