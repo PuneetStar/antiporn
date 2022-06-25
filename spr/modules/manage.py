@@ -146,5 +146,6 @@ async def scanNLP(_, message: Message):
 **Ham:** {data.ham}
 **Is_Spam:** {data.is_spam} %
 **Spam:** {data.spam}
+**Spam Probability:** {data.spam_probability} %
 """
     await message.reply(msg, quote=True)
